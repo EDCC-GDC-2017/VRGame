@@ -1,0 +1,2 @@
+Please before you commit and push to master please make sure there is not any log files or massive pch(precompiled header files) files to prevent errors when you try to push
+to master.

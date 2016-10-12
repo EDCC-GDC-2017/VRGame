@@ -70,3 +70,5 @@ DerivedDataCache/*
 
 #debug files
 *.db
+*.log
+*.log

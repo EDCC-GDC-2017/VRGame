@@ -11,8 +11,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 	void AMainPlayer::StaticRegisterNativesAMainPlayer()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "EndJump",(Native)&AMainPlayer::execEndJump);
+		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "MoveForward",(Native)&AMainPlayer::execMoveForward);
+		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "MoveRight",(Native)&AMainPlayer::execMoveRight);
+		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "StartJump",(Native)&AMainPlayer::execStartJump);
 	}
-	IMPLEMENT_CLASS(AMainPlayer, 810418413);
+	IMPLEMENT_CLASS(AMainPlayer, 3514613811);
 	void AVRGameMode::StaticRegisterNativesAVRGameMode()
 	{
 	}
@@ -20,13 +24,93 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_EndJump();
+	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_MoveForward();
+	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_MoveRight();
+	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_StartJump();
 	VR_GAME_API class UClass* Z_Construct_UClass_AMainPlayer_NoRegister();
 	VR_GAME_API class UClass* Z_Construct_UClass_AMainPlayer();
 	VR_GAME_API class UClass* Z_Construct_UClass_AVRGameMode_NoRegister();
 	VR_GAME_API class UClass* Z_Construct_UClass_AVRGameMode();
 	VR_GAME_API class UPackage* Z_Construct_UPackage__Script_vr_game();
+	UFunction* Z_Construct_UFunction_AMainPlayer_EndJump()
+	{
+		UObject* Outer=Z_Construct_UClass_AMainPlayer();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("EndJump"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AMainPlayer_MoveForward()
+	{
+		struct MainPlayer_eventMoveForward_Parms
+		{
+			float value;
+		};
+		UObject* Outer=Z_Construct_UClass_AMainPlayer();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("MoveForward"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(MainPlayer_eventMoveForward_Parms));
+			UProperty* NewProp_value = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("value"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(value, MainPlayer_eventMoveForward_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AMainPlayer_MoveRight()
+	{
+		struct MainPlayer_eventMoveRight_Parms
+		{
+			float value;
+		};
+		UObject* Outer=Z_Construct_UClass_AMainPlayer();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("MoveRight"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(MainPlayer_eventMoveRight_Parms));
+			UProperty* NewProp_value = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("value"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(value, MainPlayer_eventMoveRight_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AMainPlayer_StartJump()
+	{
+		UObject* Outer=Z_Construct_UClass_AMainPlayer();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("StartJump"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("UFUNCTION()\n       void LookUp(float value);"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AMainPlayer_NoRegister()
 	{
 		return AMainPlayer::StaticClass();
@@ -44,13 +128,27 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_EndJump());
+				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_MoveForward());
+				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_MoveRight());
+				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_StartJump());
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_FPSCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FPSCamera"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(FPSCamera, AMainPlayer), 0x0010000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_EndJump(), "EndJump"); // 2614520282
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_MoveForward(), "MoveForward"); // 3983257027
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_MoveRight(), "MoveRight"); // 3138645677
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_StartJump(), "StartJump"); // 4068133032
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("MainPlayer.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
+				MetaData->SetValue(NewProp_FPSCamera, TEXT("Category"), TEXT("GamePlay"));
+				MetaData->SetValue(NewProp_FPSCamera, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_FPSCamera, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
 #endif
 			}
 		}
@@ -101,8 +199,8 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/vr_game")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xB9D54BDB;
-			Guid.B = 0x911A1CB3;
+			Guid.A = 0x89DA3906;
+			Guid.B = 0xED293E66;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

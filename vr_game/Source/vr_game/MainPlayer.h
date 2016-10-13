@@ -23,6 +23,23 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
+	UPROPERTY(EditAnywhere, Category = GamePlay)
+		UCameraComponent* FPSCamera;
+
+	UFUNCTION()
+		void MoveForward(float value);
+
+	UFUNCTION()
+		void MoveRight(float value);
+
+	//UFUNCTION()
+	//	void LookUp(float value);
+
+	UFUNCTION()
+		void StartJump();
+
+	UFUNCTION()
+		void EndJump();
 	
 	
 };

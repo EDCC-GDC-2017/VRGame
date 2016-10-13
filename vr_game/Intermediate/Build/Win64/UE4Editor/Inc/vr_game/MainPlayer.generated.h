@@ -13,8 +13,80 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define VR_GAME_MainPlayer_generated_h
 
-#define vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS
-#define vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS_NO_PURE_DECLS
+#define vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execEndJump) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->EndJump(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execStartJump) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->StartJump(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execMoveRight) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->MoveRight(Z_Param_value); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execMoveForward) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->MoveForward(Z_Param_value); \
+		P_NATIVE_END; \
+	}
+
+
+#define vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execEndJump) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->EndJump(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execStartJump) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->StartJump(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execMoveRight) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->MoveRight(Z_Param_value); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execMoveForward) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_value); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->MoveForward(Z_Param_value); \
+		P_NATIVE_END; \
+	}
+
+
 #define vr_game_Source_vr_game_MainPlayer_h_11_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAMainPlayer(); \

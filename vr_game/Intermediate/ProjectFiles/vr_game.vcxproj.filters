@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\vr_game.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{9CC39B2A-EECD-4F21-B7D2-EF83BF80CD62}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\vr_game.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\vr_gameEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{96123F1B-7A92-449B-B027-06C1CF3A6937}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\vr_game">
+      <UniqueIdentifier>{7F206BC4-E844-49AC-A161-83CB5964E827}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\vr_game\MainPlayer.cpp">
+      <Filter>Source\vr_game</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\vr_game\MainPlayer.h">
+      <Filter>Source\vr_game</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\vr_game\vr_game.Build.cs">
+      <Filter>Source\vr_game</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\vr_game\vr_game.cpp">
+      <Filter>Source\vr_game</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\vr_game\vr_game.h">
+      <Filter>Source\vr_game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\vr_game\VRGameMode.h">
+      <Filter>Source\vr_game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\vr_game\VRGameMode.cpp">
+      <Filter>Source\vr_game</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

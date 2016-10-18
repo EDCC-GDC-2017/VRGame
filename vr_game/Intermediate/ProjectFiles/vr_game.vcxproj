@@ -406,6 +406,8 @@
     <NMakeOutput>..\..\Binaries\HTML5\vr_game-HTML5-Shipping.exe</NMakeOutput>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\vr_game\VR_HUD.cpp" />
+    <ClInclude Include="..\..\Source\vr_game\VR_HUD.h" />
     <None Include="..\..\vr_game.uproject" />
     <None Include="..\..\Source\vr_game.Target.cs" />
     <None Include="..\..\Source\vr_gameEditor.Target.cs" />

@@ -16,7 +16,11 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "MoveRight",(Native)&AMainPlayer::execMoveRight);
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "StartJump",(Native)&AMainPlayer::execStartJump);
 	}
-	IMPLEMENT_CLASS(AMainPlayer, 3514613811);
+	IMPLEMENT_CLASS(AMainPlayer, 1539155559);
+	void AVR_HUD::StaticRegisterNativesAVR_HUD()
+	{
+	}
+	IMPLEMENT_CLASS(AVR_HUD, 1786294775);
 	void AVRGameMode::StaticRegisterNativesAVRGameMode()
 	{
 	}
@@ -24,7 +28,9 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
 	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_EndJump();
@@ -33,6 +39,8 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_StartJump();
 	VR_GAME_API class UClass* Z_Construct_UClass_AMainPlayer_NoRegister();
 	VR_GAME_API class UClass* Z_Construct_UClass_AMainPlayer();
+	VR_GAME_API class UClass* Z_Construct_UClass_AVR_HUD_NoRegister();
+	VR_GAME_API class UClass* Z_Construct_UClass_AVR_HUD();
 	VR_GAME_API class UClass* Z_Construct_UClass_AVRGameMode_NoRegister();
 	VR_GAME_API class UClass* Z_Construct_UClass_AVRGameMode();
 	VR_GAME_API class UPackage* Z_Construct_UPackage__Script_vr_game();
@@ -134,6 +142,7 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_StartJump());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_cameraPosition = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("cameraPosition"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(cameraPosition, AMainPlayer), 0x0010000000000005, Z_Construct_UScriptStruct_FVector());
 				UProperty* NewProp_FPSCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FPSCamera"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(FPSCamera, AMainPlayer), 0x0010000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_EndJump(), "EndJump"); // 2614520282
@@ -146,6 +155,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("MainPlayer.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
+				MetaData->SetValue(NewProp_cameraPosition, TEXT("Category"), TEXT("GamePlay"));
+				MetaData->SetValue(NewProp_cameraPosition, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
 				MetaData->SetValue(NewProp_FPSCamera, TEXT("Category"), TEXT("GamePlay"));
 				MetaData->SetValue(NewProp_FPSCamera, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_FPSCamera, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
@@ -157,6 +168,40 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AMainPlayer(Z_Construct_UClass_AMainPlayer, &AMainPlayer::StaticClass, TEXT("AMainPlayer"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMainPlayer);
+	UClass* Z_Construct_UClass_AVR_HUD_NoRegister()
+	{
+		return AVR_HUD::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AVR_HUD()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AHUD();
+			Z_Construct_UPackage__Script_vr_game();
+			OuterClass = AVR_HUD::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x2090028C;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Rendering Actor Input Replication"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("VR_HUD.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("VR_HUD.h"));
+				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AVR_HUD(Z_Construct_UClass_AVR_HUD, &AVR_HUD::StaticClass, TEXT("AVR_HUD"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AVR_HUD);
 	UClass* Z_Construct_UClass_AVRGameMode_NoRegister()
 	{
 		return AVRGameMode::StaticClass();
@@ -199,8 +244,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/vr_game")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x89DA3906;
-			Guid.B = 0xED293E66;
+			Guid.A = 0x0B518F15;
+			Guid.B = 0xFD55CA14;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

@@ -46,9 +46,15 @@
     <ClInclude Include="..\..\Source\vr_game\VRGameMode.h">
       <Filter>Source\vr_game</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\vr_game\VR_HUD.h">
+      <Filter>Source\vr_game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\vr_game\VRGameMode.cpp">
+      <Filter>Source\vr_game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\vr_game\VR_HUD.cpp">
       <Filter>Source\vr_game</Filter>
     </ClCompile>
   </ItemGroup>

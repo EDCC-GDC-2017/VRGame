@@ -40,6 +40,9 @@ public:
 
 	UFUNCTION()
 		void EndJump();
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = GamePlay)
+		FVector cameraPosition;
 	
 	
 };

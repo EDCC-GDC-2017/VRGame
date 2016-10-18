@@ -8,6 +8,9 @@
 #ifndef VR_GAME_MainPlayer_generated_h
 	#include "MainPlayer.h"
 #endif
+#ifndef VR_GAME_VR_HUD_generated_h
+	#include "VR_HUD.h"
+#endif
 #ifndef VR_GAME_VRGameMode_generated_h
 	#include "VRGameMode.h"
 #endif

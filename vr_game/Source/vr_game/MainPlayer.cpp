@@ -19,7 +19,8 @@ AMainPlayer::AMainPlayer()
 
 	FPSCamera->AttachTo(GetCapsuleComponent());
 
-	
+	//initalize the camera position
+	cameraPosition = FVector(0, 0, 0);
 
 }
 
@@ -28,12 +29,15 @@ void AMainPlayer::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	//set the cameras relative position
+
 }
 
 // Called every frame
 void AMainPlayer::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
+	//set the camera position
 
 }
 

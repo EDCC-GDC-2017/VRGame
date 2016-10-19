@@ -12,11 +12,12 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 	void AMainPlayer::StaticRegisterNativesAMainPlayer()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "EndJump",(Native)&AMainPlayer::execEndJump);
+		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "Fire",(Native)&AMainPlayer::execFire);
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "MoveForward",(Native)&AMainPlayer::execMoveForward);
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "MoveRight",(Native)&AMainPlayer::execMoveRight);
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "StartJump",(Native)&AMainPlayer::execStartJump);
 	}
-	IMPLEMENT_CLASS(AMainPlayer, 1539155559);
+	IMPLEMENT_CLASS(AMainPlayer, 193593588);
 	void AVR_HUD::StaticRegisterNativesAVR_HUD()
 	{
 	}
@@ -34,6 +35,7 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
 	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_EndJump();
+	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_Fire();
 	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_MoveForward();
 	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_MoveRight();
 	VR_GAME_API class UFunction* Z_Construct_UFunction_AMainPlayer_StartJump();
@@ -51,6 +53,22 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 		if (!ReturnFunction)
 		{
 			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("EndJump"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MainPlayer.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AMainPlayer_Fire()
+	{
+		UObject* Outer=Z_Construct_UClass_AMainPlayer();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Fire"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -137,6 +155,7 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 				OuterClass->ClassFlags |= 0x20900080;
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_EndJump());
+				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_Fire());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_MoveForward());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_MoveRight());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMainPlayer_StartJump());
@@ -146,6 +165,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_FPSCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FPSCamera"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(FPSCamera, AMainPlayer), 0x0010000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_EndJump(), "EndJump"); // 2614520282
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_Fire(), "Fire"); // 3651917462
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_MoveForward(), "MoveForward"); // 3983257027
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_MoveRight(), "MoveRight"); // 3138645677
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_StartJump(), "StartJump"); // 4068133032
@@ -244,8 +264,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/vr_game")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x0B518F15;
-			Guid.B = 0xFD55CA14;
+			Guid.A = 0x82F9B1E2;
+			Guid.B = 0xEC85BFCC;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

@@ -58,6 +58,9 @@ void AMainPlayer::SetupPlayerInputComponent(class UInputComponent* InputComponen
 	//bind the jumping inputs
 	InputComponent->BindAction("Jump", IE_Pressed, this, &AMainPlayer::StartJump);
 	InputComponent->BindAction("Jump", IE_Released, this, &AMainPlayer::EndJump);
+	
+	//bind fire action
+	InputComponent->BindAction("Fire", IE_Pressed, this, &AMainPlayer::Fire);
 }
 
 void AMainPlayer::MoveForward(float value)
@@ -81,7 +84,7 @@ void AMainPlayer::StartJump()
 {
 
 	//do a ray trace to see if we can jump(prevents jumping off of nothing
-	FCollisionQueryParams traceParams(FName("Plarformer trace"), true,this);
+	FCollisionQueryParams traceParams(FName("Platformer trace"), true,this);
 	traceParams.bReturnPhysicalMaterial = false;
 
 	//do trace
@@ -104,5 +107,35 @@ void AMainPlayer::EndJump()
 {
 	//make the player stop jumping
 	bPressedJump = false;
+}
+
+void AMainPlayer::Fire()
+{
+	//fire a ray to hit targets
+	FCollisionQueryParams traceParams(FName("shoot trace"), true, this);
+	traceParams.bReturnPhysicalMaterial = false;
+
+	FVector cameraLocation;
+	FRotator cameraRotation;
+	GetActorEyesViewPoint(cameraLocation, cameraRotation);
+	//ignore static mesh actor
+	traceParams.AddIgnoredActor(this);
+	//GetWorld()->GetLevel()->Actors[0]->Name
+
+	FVector start;
+	FVector end;
+	start = cameraLocation;
+	end = start + cameraRotation.Vector() * 1000;
+	
+
+	FHitResult hit(ForceInit);
+
+	//if anything was hit then destroy it
+	GetWorld()->LineTraceSingleByChannel(hit, start, end, ECC_GameTraceChannel1,traceParams);
+	if (hit.GetActor())
+	{
+		//destroy actor
+		hit.GetActor()->Destroy();
+	}
 }
 

@@ -43,6 +43,9 @@ public:
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = GamePlay)
 		FVector cameraPosition;
+
+	UFUNCTION()
+		void Fire();
 	
 	
 };

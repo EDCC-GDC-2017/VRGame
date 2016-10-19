@@ -15,6 +15,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execFire) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Fire(); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execEndJump) \
 	{ \
 		P_FINISH; \
@@ -51,6 +59,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execFire) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Fire(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execEndJump) \
 	{ \

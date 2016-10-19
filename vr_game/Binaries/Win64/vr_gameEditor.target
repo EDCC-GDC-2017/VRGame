@@ -2,7 +2,7 @@
 	"TargetName" : "vr_gameEditor",
 	"Platform" : "Win64",
 	"Configuration" : "Development",
-	"BuildId" : "4ea8ac2c-c3c1-4cf2-9e94-084ad4f5328e",
+	"BuildId" : "2e3e6d71-0dbf-4538-beb3-37c7cf9e7518",
 	"Version" : 
 	{
 		"MajorVersion" : 4,
@@ -15,15 +15,15 @@
 	"BuildProducts" :
 	[
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-vr_game-6998.dll",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-vr_game-3350.dll",
 			"Type" : "DynamicLibrary"
 		},
 		{
-			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-vr_game-6998.pdb",
+			"Path" : "$(ProjectDir)/Binaries/Win64/UE4Editor-vr_game-3350.pdb",
 			"Type" : "SymbolFile"
 		},
 		{
-			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-vr_game-6998.lib",
+			"Path" : "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-vr_game-3350.lib",
 			"Type" : "ImportLibrary"
 		}
 	],

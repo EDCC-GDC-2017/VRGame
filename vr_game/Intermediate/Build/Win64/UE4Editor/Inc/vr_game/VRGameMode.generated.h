@@ -13,8 +13,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define VR_GAME_VRGameMode_generated_h
 
-#define vr_game_Source_vr_game_VRGameMode_h_14_RPC_WRAPPERS
-#define vr_game_Source_vr_game_VRGameMode_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define vr_game_Source_vr_game_VRGameMode_h_14_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execBeginPlay) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->BeginPlay(); \
+		P_NATIVE_END; \
+	}
+
+
+#define vr_game_Source_vr_game_VRGameMode_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execBeginPlay) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->BeginPlay(); \
+		P_NATIVE_END; \
+	}
+
+
 #define vr_game_Source_vr_game_VRGameMode_h_14_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAVRGameMode(); \

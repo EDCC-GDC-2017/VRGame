@@ -3,6 +3,11 @@
 #include "vr_game.h"
 #include "VRGameMode.h"
 
+void AVRGameMode::BeginPlay()
+{
+	//create the second player
+	Super::BeginPlay();
 
-
+	//UGameplayStatics::CreatePlayer(this, -1, true);
+}
 

@@ -12,7 +12,9 @@ UCLASS()
 class VR_GAME_API AVRGameMode : public AGameMode
 {
 	GENERATED_BODY()
-	
+
+		UFUNCTION()
+	void	BeginPlay() override;
 	
 	
 	

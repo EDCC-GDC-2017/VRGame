@@ -24,8 +24,9 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 	IMPLEMENT_CLASS(AVR_HUD, 1786294775);
 	void AVRGameMode::StaticRegisterNativesAVRGameMode()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AVRGameMode::StaticClass(), "BeginPlay",(Native)&AVRGameMode::execBeginPlay);
 	}
-	IMPLEMENT_CLASS(AVRGameMode, 1134061913);
+	IMPLEMENT_CLASS(AVRGameMode, 1831847066);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
@@ -43,6 +44,7 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 	VR_GAME_API class UClass* Z_Construct_UClass_AMainPlayer();
 	VR_GAME_API class UClass* Z_Construct_UClass_AVR_HUD_NoRegister();
 	VR_GAME_API class UClass* Z_Construct_UClass_AVR_HUD();
+	VR_GAME_API class UFunction* Z_Construct_UFunction_AVRGameMode_BeginPlay();
 	VR_GAME_API class UClass* Z_Construct_UClass_AVRGameMode_NoRegister();
 	VR_GAME_API class UClass* Z_Construct_UClass_AVRGameMode();
 	VR_GAME_API class UPackage* Z_Construct_UPackage__Script_vr_game();
@@ -222,6 +224,22 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AVR_HUD(Z_Construct_UClass_AVR_HUD, &AVR_HUD::StaticClass, TEXT("AVR_HUD"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AVR_HUD);
+	UFunction* Z_Construct_UFunction_AVRGameMode_BeginPlay()
+	{
+		UObject* Outer=Z_Construct_UClass_AVRGameMode();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("BeginPlay"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00040401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("VRGameMode.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AVRGameMode_NoRegister()
 	{
 		return AVRGameMode::StaticClass();
@@ -239,7 +257,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x2090028C;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AVRGameMode_BeginPlay());
 
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AVRGameMode_BeginPlay(), "BeginPlay"); // 521117821
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -264,8 +284,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/vr_game")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x82F9B1E2;
-			Guid.B = 0xEC85BFCC;
+			Guid.A = 0xC952DFC5;
+			Guid.B = 0x16AEBD87;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

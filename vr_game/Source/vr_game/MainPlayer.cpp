@@ -109,7 +109,8 @@ void AMainPlayer::EndJump()
 	bPressedJump = false;
 }
 
-void AMainPlayer::Fire()
+
+void AMainPlayer::Fire_Implementation()
 {
 	GEngine->AddOnScreenDebugMessage(1, 2, FColor::Red, TEXT("Fire was clicked"));
 	//fire a ray to hit targets
@@ -138,5 +139,10 @@ void AMainPlayer::Fire()
 		//destroy actor
 		hit.GetActor()->Destroy();
 	}
+}
+
+bool AMainPlayer::Fire_Validate()
+{
+	return true;
 }
 

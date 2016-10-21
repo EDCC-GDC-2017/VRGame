@@ -9,6 +9,11 @@
 #include "vr_game.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCode1vr_game() {}
+FName VR_GAME_Fire = FName(TEXT("Fire"));
+	void AMainPlayer::Fire()
+	{
+		ProcessEvent(FindFunctionChecked(VR_GAME_Fire),NULL);
+	}
 	void AMainPlayer::StaticRegisterNativesAMainPlayer()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "EndJump",(Native)&AMainPlayer::execEndJump);
@@ -17,7 +22,7 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "MoveRight",(Native)&AMainPlayer::execMoveRight);
 		FNativeFunctionRegistrar::RegisterFunction(AMainPlayer::StaticClass(), "StartJump",(Native)&AMainPlayer::execStartJump);
 	}
-	IMPLEMENT_CLASS(AMainPlayer, 193593588);
+	IMPLEMENT_CLASS(AMainPlayer, 2343694086);
 	void AVR_HUD::StaticRegisterNativesAVR_HUD()
 	{
 	}
@@ -70,7 +75,7 @@ void EmptyLinkFunctionForGeneratedCode1vr_game() {}
 		static UFunction* ReturnFunction = NULL;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Fire"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Fire"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535);
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -167,7 +172,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_FPSCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FPSCamera"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(FPSCamera, AMainPlayer), 0x0010000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_EndJump(), "EndJump"); // 2614520282
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_Fire(), "Fire"); // 3651917462
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_Fire(), "Fire"); // 637120870
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_MoveForward(), "MoveForward"); // 3983257027
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_MoveRight(), "MoveRight"); // 3138645677
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AMainPlayer_StartJump(), "StartJump"); // 4068133032
@@ -284,7 +289,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/vr_game")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xC952DFC5;
+			Guid.A = 0x17292355;
 			Guid.B = 0x16AEBD87;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

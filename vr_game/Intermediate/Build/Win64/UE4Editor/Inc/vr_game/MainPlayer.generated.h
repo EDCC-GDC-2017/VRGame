@@ -14,12 +14,19 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define VR_GAME_MainPlayer_generated_h
 
 #define vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS \
+	virtual bool Fire_Validate(); \
+	virtual void Fire_Implementation(); \
  \
 	DECLARE_FUNCTION(execFire) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		this->Fire(); \
+		if (!this->Fire_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("Fire_Validate")); \
+			return; \
+		} \
+		this->Fire_Implementation(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -59,12 +66,19 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual bool Fire_Validate(); \
+	virtual void Fire_Implementation(); \
  \
 	DECLARE_FUNCTION(execFire) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		this->Fire(); \
+		if (!this->Fire_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("Fire_Validate")); \
+			return; \
+		} \
+		this->Fire_Implementation(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -103,6 +117,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
+#define vr_game_Source_vr_game_MainPlayer_h_11_EVENT_PARMS
+extern VR_GAME_API  FName VR_GAME_Fire;
+#define vr_game_Source_vr_game_MainPlayer_h_11_CALLBACK_WRAPPERS
 #define vr_game_Source_vr_game_MainPlayer_h_11_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAMainPlayer(); \
@@ -149,11 +166,15 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMainPlayer); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AMainPlayer)
 
 
-#define vr_game_Source_vr_game_MainPlayer_h_8_PROLOG
+#define vr_game_Source_vr_game_MainPlayer_h_8_PROLOG \
+	vr_game_Source_vr_game_MainPlayer_h_11_EVENT_PARMS
+
+
 #define vr_game_Source_vr_game_MainPlayer_h_11_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS \
+	vr_game_Source_vr_game_MainPlayer_h_11_CALLBACK_WRAPPERS \
 	vr_game_Source_vr_game_MainPlayer_h_11_INCLASS \
 	vr_game_Source_vr_game_MainPlayer_h_11_STANDARD_CONSTRUCTORS \
 public: \
@@ -164,6 +185,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	vr_game_Source_vr_game_MainPlayer_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	vr_game_Source_vr_game_MainPlayer_h_11_CALLBACK_WRAPPERS \
 	vr_game_Source_vr_game_MainPlayer_h_11_INCLASS_NO_PURE_DECLS \
 	vr_game_Source_vr_game_MainPlayer_h_11_ENHANCED_CONSTRUCTORS \
 private: \

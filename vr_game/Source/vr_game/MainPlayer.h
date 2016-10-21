@@ -44,7 +44,7 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = GamePlay)
 		FVector cameraPosition;
 
-	UFUNCTION()
+	UFUNCTION(Server,Reliable,WithValidation)
 		void Fire();
 	
 	

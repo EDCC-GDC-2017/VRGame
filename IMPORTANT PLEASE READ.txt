@@ -4,3 +4,7 @@ to master.
 
 PLANNING DOCUMENT ON GOOGLE DOCS
 https://docs.google.com/document/d/1BerqOtejDDUGSQqnJ0NrhUeJJA6VwYhawai43dDBY24/edit?usp=drive_web
+
+IMPORTANT NOTES
+Be sure to always sync before opening the VR_GAME project to prevent merge conflicts during pushes,
+this is VERY IMPORTANT!

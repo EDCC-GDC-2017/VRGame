@@ -137,7 +137,15 @@ void AMainPlayer::Fire_Implementation()
 	if (hit.GetActor())
 	{
 		//destroy actor
-		hit.GetActor()->Destroy();
+		if (!(hit.GetActor()->IsA(AMainPlayer::StaticClass())))
+		{
+			GEngine->AddOnScreenDebugMessage(3, 2, FColor::Red, FString("Object was destroyed ( " + hit.GetActor()->GetName() + " )"));
+			hit.GetActor()->Destroy();
+		}
+		else
+		{
+			GEngine->AddOnScreenDebugMessage(2, 2, FColor::Red, TEXT("Player Was clicked on"));
+		}
 	}
 }
 

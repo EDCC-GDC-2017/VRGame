@@ -111,6 +111,7 @@ void AMainPlayer::EndJump()
 
 void AMainPlayer::Fire()
 {
+	GEngine->AddOnScreenDebugMessage(1, 2, FColor::Red, TEXT("Fire was clicked"));
 	//fire a ray to hit targets
 	FCollisionQueryParams traceParams(FName("shoot trace"), true, this);
 	traceParams.bReturnPhysicalMaterial = false;

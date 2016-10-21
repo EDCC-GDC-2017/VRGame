@@ -1,8 +1,8 @@
 {
 	"Changelist" : 3142249,
-	"BuildId" : "997d199d-cecc-4de6-a323-195995ea8713",
+	"BuildId" : "d1f68354-e664-46cb-ab28-d50702e607e5",
 	"Modules" : 
 	{
-		"vr_game" : "UE4Editor-vr_game-7033.dll"
+		"vr_game" : "UE4Editor-vr_game-1929.dll"
 	}
 }

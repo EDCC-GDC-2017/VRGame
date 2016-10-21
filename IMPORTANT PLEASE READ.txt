@@ -1,3 +1,6 @@
 Please before you commit and push to master please make sure there is not any log files or massive 
 pch(precompiled header files) files to prevent errors when you try to push
 to master.
+
+PLANNING DOCUMENT ON GOOGLE DOCS
+https://docs.google.com/document/d/1BerqOtejDDUGSQqnJ0NrhUeJJA6VwYhawai43dDBY24/edit?usp=drive_web

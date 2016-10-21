@@ -90,7 +90,7 @@ void AMainPlayer::StartJump()
 	//do trace
 	FVector start = GetActorLocation();
 
-	FVector end = start + FVector(0, 0, -256);
+	FVector end = start + FVector(0, 0, -100);
 
 
 	//init hit result

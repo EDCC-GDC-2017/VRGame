@@ -47,5 +47,6 @@ public:
 	UFUNCTION(Server,Reliable,WithValidation)
 		void Fire();
 	
-	
+	UPROPERTY(Replicated,EditAnywhere,BlueprintReadWrite,Category = GamePlay)
+		float health = 100;
 };

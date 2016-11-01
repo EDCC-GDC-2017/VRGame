@@ -49,4 +49,14 @@ public:
 	
 	UPROPERTY(Replicated,EditAnywhere,BlueprintReadWrite,Category = GamePlay)
 		float health = 100;
+
+	//UPROPERTY(BlueprintRead,Category = GamePlay)
+	//FVector startPosition;
+
+	//UFUNCTION()
+	//	bool IsDead();
+
+	//UFUNCTION()
+	//	void respawn();
 };
+

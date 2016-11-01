@@ -21,6 +21,9 @@ AMainPlayer::AMainPlayer()
 
 	//initalize the camera position
 	cameraPosition = FVector(0, 0, 0);
+
+	//save start position
+	//startPosition = GetActorLocation();
 }
 
 // Called when the game starts or when spawned
@@ -142,7 +145,24 @@ void AMainPlayer::Fire_Implementation()
 		}
 		else
 		{
-			GEngine->AddOnScreenDebugMessage(2, 2, FColor::Red, TEXT("Player Was clicked on"));
+			//GEngine->AddOnScreenDebugMessage(2, 2, FColor::Red, TEXT("Player Was clicked on"));
+			//change hit players health
+			AMainPlayer* player = Cast<AMainPlayer>(hit.GetActor());
+
+			//lower players health by five
+			player->health -= 5;
+
+			////if the player is dead
+			//if (player->IsDead())
+			//{
+			//	//reset the players health
+			//	player->health = 100;
+
+			//	//respawn the player
+			//	player->respawn();
+
+			//}
+
 		}
 	}
 }
@@ -158,6 +178,16 @@ void AMainPlayer::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLi
 
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 }
+
+//bool AMainPlayer::IsDead()
+//{
+//	return (health < 1);
+//}
+//
+//void AMainPlayer::respawn()
+//{
+//	SetActorLocation(startPosition);
+//}
 
 
 

@@ -152,16 +152,16 @@ void AMainPlayer::Fire_Implementation()
 			//lower players health by five
 			player->health -= 5;
 
-			////if the player is dead
-			//if (player->IsDead())
-			//{
-			//	//reset the players health
-			//	player->health = 100;
+			//if the player is dead
+			if (player->IsDead())
+			{
+				//reset the players health
+				player->health = 100;
 
-			//	//respawn the player
-			//	player->respawn();
+				//respawn the player
+				player->respawn();
 
-			//}
+			}
 
 		}
 	}
@@ -179,15 +179,15 @@ void AMainPlayer::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLi
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 }
 
-//bool AMainPlayer::IsDead()
-//{
-//	return (health < 1);
-//}
-//
-//void AMainPlayer::respawn()
-//{
-//	SetActorLocation(startPosition);
-//}
+bool AMainPlayer::IsDead()
+{
+	return (health < 1);
+}
+
+void AMainPlayer::respawn()
+{
+	SetActorLocation(startPosition);
+}
 
 
 

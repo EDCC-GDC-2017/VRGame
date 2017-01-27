@@ -46,6 +46,8 @@ public:
 
 	UFUNCTION(Server,Reliable,WithValidation)
 		void Fire();
+
+		void respawn();
 	
 	UPROPERTY(Replicated,EditAnywhere,BlueprintReadWrite,Category = GamePlay)
 		float health = 100;
@@ -54,8 +56,8 @@ public:
 	FVector startPosition;
 
 
-		bool IsDead();
+	inline	bool IsDead();
 
-		void respawn();
+		
 };
 

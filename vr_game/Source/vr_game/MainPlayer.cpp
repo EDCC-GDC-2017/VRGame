@@ -39,6 +39,10 @@ void AMainPlayer::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
 	//set the camera position
+
+	//check to make sure the player has not fallen off the map
+	if (GetActorLocation().Z < -250)
+		respawn();
 }
 
 // Called to bind functionality to input
@@ -183,6 +187,7 @@ bool AMainPlayer::IsDead()
 {
 	return (health < 1);
 }
+
 
 void AMainPlayer::respawn()
 {

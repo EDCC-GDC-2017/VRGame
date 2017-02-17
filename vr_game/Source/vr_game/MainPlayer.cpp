@@ -159,6 +159,8 @@ void AMainPlayer::Fire_Implementation()
 			//if the player is dead
 			if (player->IsDead())
 			{
+
+				//get this players game state 
 				//reset the players health
 				player->health = 100;
 

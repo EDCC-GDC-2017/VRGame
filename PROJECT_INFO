@@ -1,4 +1,5 @@
-GAME INFORMATION:
+
+-GAME INFORMATION:
   https://docs.google.com/document/d/1BerqOtejDDUGSQqnJ0NrhUeJJA6VwYhawai43dDBY24/edit?usp=drive_web
 
   Add any important notes to the section below with appropriate formatting.
@@ -17,3 +18,7 @@ IMPORTANT NOTES:
   - Always synchronize before opening vr_game.uproject to prevent merge conflicts during pushes.
 
   - All game information is written to the Google Document via a link specified above.
+
+# Changelog 4/11/2017
+  -Added opendb to .gitignore file
+  -Updated unreal engine version to 4.15.1

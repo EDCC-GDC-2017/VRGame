@@ -1,8 +1,9 @@
 {
-	"Changelist" : 3142249,
-	"BuildId" : "1d0a3fca-e78c-43c2-abe9-a3a0918a695a",
+	"Changelist" : 3348071,
+	"CompatibleChangelist" : 3299760,
+	"BuildId" : "061ee2a1-1708-49db-bd34-6faec8f81f95",
 	"Modules" : 
 	{
-		"vr_game" : "UE4Editor-vr_game-3034.dll"
+		"vr_game" : "UE4Editor-vr_game.dll"
 	}
 }

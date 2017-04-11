@@ -72,3 +72,6 @@ DerivedDataCache/*
 *.db
 *.log
 *.log
+
+#Added ignore for openDB file
+*.opendb

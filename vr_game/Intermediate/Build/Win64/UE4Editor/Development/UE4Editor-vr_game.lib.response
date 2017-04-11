@@ -1,0 +1,30 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-vr_game.dll"
+/IGNORE:4221
+/NODEFAULTLIB:"LIBCMT"
+/NODEFAULTLIB:"LIBCPMT"
+/NODEFAULTLIB:"LIBCMTD"
+/NODEFAULTLIB:"LIBCPMTD"
+/NODEFAULTLIB:"MSVCRTD"
+/NODEFAULTLIB:"MSVCPRTD"
+/NODEFAULTLIB:"LIBC"
+/NODEFAULTLIB:"LIBCP"
+/NODEFAULTLIB:"LIBCD"
+/NODEFAULTLIB:"LIBCPD"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\PCH.vr_game.h.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\DeathMatchGameMode.cpp.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\DeathMatchGameState.cpp.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\MainMenuWidget.cpp.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\MainPlayer.cpp.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\MyPlayerState.cpp.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\VRGameMode.cpp.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\vr_game.cpp.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\VR_HUD.cpp.obj"
+"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\vr_game.generated.cpp.obj"
+"C:\Program Files\Epic Games\UE_4.15\Engine\Intermediate\Build\Win64\UE4Editor\Development\vr_game\PCLaunch.rc.res"
+"C:\Program Files\Epic Games\UE_4.15\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+/OUT:"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-vr_game.lib"

@@ -22,9 +22,9 @@
 /wd4838
 /w44668
 /I "C:\Program Files\Epic Games\UE_4.15\Engine\Source"
-/I F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source
-/I F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Inc\vr_game
-/I F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source\vr_game
+/I C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source
+/I C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Inc\vr_game
+/I C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source\vr_game
 /I "C:\Program Files\Epic Games\UE_4.15\Engine\Source\Runtime\Core\Public"
 /I "C:\Program Files\Epic Games\UE_4.15\Engine\Source\Runtime\Core\Public\Internationalization"
 /I "C:\Program Files\Epic Games\UE_4.15\Engine\Source\Runtime\Core\Public\Async"
@@ -321,12 +321,12 @@
 /I "C:\Program Files\Epic Games\UE_4.15\Engine\Source\Runtime\MovieSceneTracks\Public\Tracks"
 /I "C:\Program Files\Epic Games\UE_4.15\Engine\Intermediate\Build\Win64\UE4Editor\Inc\MovieSceneTracks"
 /I "C:\Program Files\Epic Games\UE_4.15\Engine\Source\Runtime\MovieSceneTracks"
-/FI"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source\vr_game\vr_game.h"
-/Yu"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source\vr_game\vr_game.h"
-/Fp"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\PCH.vr_game.h.pch"
-"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Inc\vr_game\vr_game.generated.cpp"
-/Fo"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\vr_game.generated.cpp.obj"
-/Fd"F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\vr_game.h.pdb"
+/FI"C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source\vr_game\vr_game.h"
+/Yu"C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source\vr_game\vr_game.h"
+/Fp"C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\PCH.vr_game.h.pch"
+"C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Inc\vr_game\vr_game.generated.cpp"
+/Fo"C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\vr_game.generated.cpp.obj"
+/Fd"C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Intermediate\Build\Win64\UE4Editor\Development\vr_game\vr_game.h.pdb"
 /TP
 /GR-
 /W4

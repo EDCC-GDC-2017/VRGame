@@ -1,3 +1,3 @@
-F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source\vr_game\vr_game.Build.cs
-F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source\vr_game.Target.cs
-F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source\vr_gameEditor.Target.cs
+C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source\vr_game\vr_game.Build.cs
+C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source\vr_game.Target.cs
+C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source\vr_gameEditor.Target.cs

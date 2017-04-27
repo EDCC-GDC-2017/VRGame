@@ -1,4 +1,4 @@
-// PCH for F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source\vr_game\vr_game.h
+// PCH for C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source\vr_game\vr_game.h
 #define UE_EDITOR 1
 #define IS_PROGRAM 0
 #define WITH_DEV_AUTOMATION_TESTS 1
@@ -119,4 +119,4 @@
 #define UMG_API DLLIMPORT
 #define MOVIESCENE_API DLLIMPORT
 #define MOVIESCENETRACKS_API DLLIMPORT
-#include "F:\Programs\Repos\VR_Game\VRGame_Fixed\VRGame\vr_game\Source\vr_game\vr_game.h"
+#include "C:\Users\Byron\Documents\GitHub\VRGame\vr_game\Source\vr_game\vr_game.h"

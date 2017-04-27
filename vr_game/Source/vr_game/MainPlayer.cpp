@@ -7,7 +7,7 @@
 // Sets default values
 AMainPlayer::AMainPlayer()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 
@@ -30,14 +30,14 @@ AMainPlayer::AMainPlayer()
 void AMainPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	//set the cameras relative position
 }
 
 // Called every frame
-void AMainPlayer::Tick( float DeltaTime )
+void AMainPlayer::Tick(float DeltaTime)
 {
-	Super::Tick( DeltaTime );
+	Super::Tick(DeltaTime);
 	//set the camera position
 
 	//check to make sure the player has not fallen off the map
@@ -59,12 +59,12 @@ void AMainPlayer::SetupPlayerInputComponent(class UInputComponent* InputComponen
 	//bind right movement
 	InputComponent->BindAxis("MoveRight", this, &AMainPlayer::MoveRight);
 
-//bind the jumping inputs
-InputComponent->BindAction("Jump", IE_Pressed, this, &AMainPlayer::StartJump);
-InputComponent->BindAction("Jump", IE_Released, this, &AMainPlayer::EndJump);
+	//bind the jumping inputs
+	InputComponent->BindAction("Jump", IE_Pressed, this, &AMainPlayer::StartJump);
+	InputComponent->BindAction("Jump", IE_Released, this, &AMainPlayer::EndJump);
 
-//bind fire action
-InputComponent->BindAction("Fire", IE_Pressed, this, &AMainPlayer::Fire);
+	//bind fire action
+	InputComponent->BindAction("Fire", IE_Pressed, this, &AMainPlayer::Fire);
 }
 
 void AMainPlayer::MoveForward(float value)
